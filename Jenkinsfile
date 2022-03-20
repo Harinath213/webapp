@@ -19,6 +19,5 @@ node{
 
        ''', cc: '', from: '', replyTo: '', subject: 'scripted pipeline job', to: 'haridevops190@gmail.com'
 
-
     }   
 }
