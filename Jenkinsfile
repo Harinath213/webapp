@@ -11,11 +11,14 @@ node{
     }
 
     stage('Email Notification'){
-        mail bcc: '', body: '''Hi, 
-        Welcome Jenkins Pipeline jobs alert.
+       mail bcc: '', body: '''Hi, 
+       Welcome, Jenkins Pipeline jobs alert.
 
-        Regards,
-        Hari
+       Regards,
+       Hari
 
-    }
+       ''', cc: '', from: '', replyTo: '', subject: 'scripted pipeline job', to: 'haridevops190@gmail.com'
+
+
+    }   
 }
