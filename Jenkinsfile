@@ -1,7 +1,6 @@
 node{
     stage('SCM Checkout'){
-        git branch: 'main',
-        url 'git@github.com:Harinath213/webapp.git'
+        git 'git@github.com:Harinath213/webapp.git'
     }
 
     stage('compile the code'){
