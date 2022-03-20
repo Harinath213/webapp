@@ -26,6 +26,12 @@ node{
         }
     }
 
+    stage('deploy war to Tomcat'){
+        sshagent(['tomcat-pipeline']){
+            sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.16.183:/opt/tomcat8/webapps/'
+        }
+    }
+
     stage('Email Notification'){
        mail bcc: '', body: '''Hi, 
        Welcome, Jenkins Pipeline jobs alert.
