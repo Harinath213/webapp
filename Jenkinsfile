@@ -10,6 +10,13 @@ node{
         sh "${mvnHome}/bin/mvn package"
     }
 
+    stage('sonar analysis'){
+        def mvnHome = tool name: 'maven-3', type: 'maven'
+        withSonarQubeEnv(credentialsId: 'sonar-jenkins') {
+            sh "${mvnHome}/bin/mvn sonar:sonar" 
+       }
+    }
+
     stage('Email Notification'){
        mail bcc: '', body: '''Hi, 
        Welcome, Jenkins Pipeline jobs alert.
